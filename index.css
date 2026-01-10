@@ -1,0 +1,193 @@
+:root {
+	--bg-color: #ffffff;
+	--text-color: #111827;
+	--nav-bg: #f8f9fa;
+	--nav-text: #111827;
+}
+
+html, body, #root {
+	margin: 0;
+	padding: 0;
+	width: 100%;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+}
+
+.theme-dark {
+	--bg-color: #0b1220;
+	--text-color: #e6eef8;
+	--nav-bg: #0f1724;
+	--nav-text: #e6eef8;
+}
+
+.theme-light {
+	--bg-color: #ffffff;
+	--text-color: #111827;
+	--nav-bg: #f8f9fa;
+	--nav-text: #111827;
+}
+
+body {
+	background-color: var(--bg-color);
+	color: var(--text-color);
+	transition: background-color 200ms ease, color 200ms ease;
+	margin: 0;
+	padding: 0;
+}
+
+.navbar.theme-dark, .theme-dark .navbar {
+	background-color: var(--nav-bg) !important;
+}
+
+.theme-dark .nav-link,
+.theme-dark .navbar-brand,
+.theme-dark .btn {
+	color: var(--nav-text) !important;
+}
+
+.theme-toggle {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	width: 36px;
+	height: 36px;
+	padding: 0;
+}
+
+/*
+	To exclude an element (e.g. a banner/hero) from the global theme
+	effects, add the `no-theme` class to that element. Example:
+		<section class="no-theme"> ... </section>
+
+	The rules below preserve the element's light-mode look while the
+	rest of the page toggles between light/dark.
+*/
+
+:root {
+	--banner-bg-light: #ffffff;
+	--banner-text-light: #111827;
+}
+
+.theme-dark .no-theme,
+.theme-light .no-theme {
+	background-color: var(--banner-bg-light) !important;
+	color: var(--banner-text-light) !important;
+}
+
+.theme-dark .no-theme *,
+.theme-light .no-theme * {
+	color: inherit !important;
+	background-color: transparent !important;
+}
+
+/* Make Bootstrap cards, forms and muted text adapt to dark theme */
+.theme-dark .card {
+	background-color: rgba(255,255,255,0.03) !important;
+	border-color: rgba(255,255,255,0.06) !important;
+	color: var(--text-color) !important;
+}
+
+.theme-dark .card .card-title,
+.theme-dark .card .card-text,
+.theme-dark h2,
+.theme-dark h3,
+.theme-dark h4,
+.theme-dark p,
+.theme-dark li {
+	color: var(--text-color) !important;
+}
+
+.theme-dark .text-muted {
+	color: rgba(230,238,248,0.7) !important;
+}
+
+.theme-dark .form-control {
+	background-color: rgba(0, 0, 0, 0.03) !important;
+	color: var(--text-color) !important;
+	border-color: rgba(255,255,255,0.06) !important;
+}
+
+.theme-dark .btn.btn-danger {
+	background-color: #c62828 !important;
+	border-color: #b71c1c !important;
+}
+
+.theme-dark .navbar,
+.theme-dark header,
+.theme-dark section,
+.theme-dark main,
+.theme-dark footer {
+	background-color: transparent;
+}
+
+/* Make horizontal rules subtle in dark */
+.theme-dark hr {
+	border-color: rgba(255,255,255,0.06) !important;
+}
+
+/* Placeholders: make them light in dark mode */
+.theme-dark ::-webkit-input-placeholder {
+	color: rgba(230,238,248,0.6) !important;
+}
+.theme-dark :-ms-input-placeholder {
+	color: rgba(230,238,248,0.6) !important;
+}
+.theme-dark ::-ms-input-placeholder {
+	color: rgba(230,238,248,0.6) !important;
+}
+.theme-dark ::placeholder {
+	color: rgba(230,238,248,0.6) !important;
+}
+
+/* Ensure inputs and textareas use the dark text color */
+.theme-dark input,
+.theme-dark textarea,
+.theme-dark select {
+	color: var(--text-color) !important;
+}
+
+/* Convert white/light backgrounds to dark in night mode, but
+	 exclude any element explicitly marked with `no-theme`. */
+.theme-dark .bg-white:not(.no-theme),
+.theme-dark .bg-light:not(.no-theme),
+.theme-dark .card:not(.no-theme),
+.theme-dark .container:not(.no-theme),
+.theme-dark .container-fluid:not(.no-theme),
+.theme-dark header:not(.no-theme),
+.theme-dark section:not(.no-theme),
+.theme-dark main:not(.no-theme),
+.theme-dark footer:not(.no-theme),
+.theme-dark .jumbotron:not(.no-theme),
+.theme-dark .modal-content:not(.no-theme) {
+	background-color: var(--bg-color) !important;
+	border-color: rgba(255,255,255,0.06) !important;
+	color: var(--text-color) !important;
+}
+
+/* Also target inner elements when the parent is not marked `no-theme` */
+.theme-dark :not(.no-theme) .bg-white,
+.theme-dark :not(.no-theme) .bg-light,
+.theme-dark :not(.no-theme) .card,
+.theme-dark :not(.no-theme) .jumbotron,
+.theme-dark :not(.no-theme) .modal-content {
+	background-color: var(--bg-color) !important;
+	border-color: rgba(0, 0, 0, 0.06) !important;
+	color: var(--text-color) !important;
+}
+
+/* Force headings on About/Contact/Services pages to always be red */
+#about h2, #about h3, #about h4, #about .card-title, #about .text-danger,
+#contact h2, #contact h3, #contact h4, #contact .card-title, #contact .text-danger,
+#services h2, #services h3, #services h4, #services .card-title, #services .text-danger {
+    color: #dc3545 !important;
+}
+
+/* Add extra gap between navbar and page content only in dark mode */
+.theme-dark #about,
+.theme-dark #contact,
+.theme-dark #services {
+	margin-top: 1.5rem; /* space below navbar */
+	padding-top: 0.5rem; /* additional breathing room */
+}
+
