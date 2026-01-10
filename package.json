@@ -1,7 +1,7 @@
 {"name": "ambulance-website",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://rahuladhikary2005.github.io/AmbulanceGalaxy/",
+  "homepage": "https://rahuladhikary2005.github.io/Ag/",
   "dependencies": {
     "react": "^19.0.0",
     "react-dom": "^19.0.0",

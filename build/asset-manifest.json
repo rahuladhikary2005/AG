@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/Ag/static/css/main.7547b2aa.css",
+    "main.js": "/Ag/static/js/main.db713959.js",
+    "index.html": "/Ag/index.html",
+    "main.7547b2aa.css.map": "/Ag/static/css/main.7547b2aa.css.map",
+    "main.db713959.js.map": "/Ag/static/js/main.db713959.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.7547b2aa.css",
+    "static/js/main.db713959.js"
+  ]
+}
